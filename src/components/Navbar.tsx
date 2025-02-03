@@ -13,6 +13,7 @@ const Navbar = () => {
       events: "Events",
       reports: "Reports",
       contact: "Contact",
+      foundation: "Nada Foundation for Human Development"
     },
     ar: {
       home: "الرئيسية",
@@ -22,6 +23,7 @@ const Navbar = () => {
       events: "الفعاليات",
       reports: "التقارير",
       contact: "اتصل بنا",
+      foundation: "مؤسسة الندى للتنمية الإنسانية"
     },
   };
 
@@ -31,11 +33,11 @@ const Navbar = () => {
     <nav className="bg-white shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+          <div className="flex items-center space-x-2 rtl:space-x-reverse">
             <img src="/lovable-uploads/1f5d36d2-9404-449a-bc19-a7e2e6a265e4.png" alt="NFHD Logo" className="h-12 w-auto" />
+            <span className="text-primary font-bold text-lg hidden md:block">{t.foundation}</span>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
             <a href="/" className="text-primary hover:text-secondary transition-colors">
               {t.home}
@@ -60,7 +62,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          <div className="flex items-center">
+          <div className="flex items-center space-x-2 rtl:space-x-reverse">
             <button
               onClick={() => setLanguage(language === "en" ? "ar" : "en")}
               className="p-2 hover:bg-gray-100 rounded-full text-primary"
