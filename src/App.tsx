@@ -13,6 +13,13 @@ import Reports from "./pages/Reports";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
+// Admin pages
+import AdminLayout from "./pages/admin/Layout";
+import AdminProjects from "./pages/admin/Projects";
+import AdminNews from "./pages/admin/News";
+import AdminEvents from "./pages/admin/Events";
+import AdminReports from "./pages/admin/Reports";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -30,6 +37,15 @@ const App = () => (
             <Route path="/events" element={<Events />} />
             <Route path="/reports" element={<Reports />} />
             <Route path="/contact" element={<Contact />} />
+            
+            {/* Admin routes */}
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route path="projects" element={<AdminProjects />} />
+              <Route path="news" element={<AdminNews />} />
+              <Route path="events" element={<AdminEvents />} />
+              <Route path="reports" element={<AdminReports />} />
+            </Route>
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
